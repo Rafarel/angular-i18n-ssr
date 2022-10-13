@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="9058814379900574105" datatype="html">
+        <source>Bienvenue sur notre super site</source>
+        <target>Welcome to our super site</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8534821753891681526" datatype="html">
+        <source>Dernière mise à jour effectuée il y a <x id="INTERPOLATION" equiv-text="{{lastUpdateDays}}"/> jours</source>
+        <target>Last update has been made <x id="INTERPOLATION" equiv-text="{{lastUpdateDays}}"/> days ago</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
