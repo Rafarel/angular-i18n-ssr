@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  template: `
-    <p>
-      home works!
-    </p>
-  `,
-  styles: [
-  ]
+    selector: 'app-home',
+    template: `
+        <p>Bienvenue sur notre site</p>
+        <p>Dernière mise à jour effectuée il y a {{lastUpdateDays}} jours</p>
+    `,
+    styles: []
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+    lastUpdateDays = 2
 
-  ngOnInit(): void {
-  }
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
 
 }

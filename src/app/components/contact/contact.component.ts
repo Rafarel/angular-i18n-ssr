@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-contact',
-  template: `
-    <p>
-      contact works!
-    </p>
-  `,
-  styles: [
-  ]
+    selector: 'app-contact',
+    template: `
+        <p>
+            contactez nous en utilisant ce formulaire
+        </p>
+    `,
+    styles: []
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }
