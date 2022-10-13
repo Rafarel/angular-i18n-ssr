@@ -19,13 +19,9 @@
             "i18n": {
                 "sourceLocale": "fr-FR",
                 "locales": {
-                    "fr-FR": {
-                        "baseHref": "fr/",
-                        "translation": "src/i18n/messages.fr.xlf"
-                    },
                     "en-US": {
                         "baseHref": "en/",
-                        "translation": "src/i18n/messages.en.xlf"
+                        "translation": "src/locale/messages.en.xlf"
                     }
                 }
             },
