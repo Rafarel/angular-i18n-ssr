@@ -19,7 +19,7 @@
             "i18n": {
                 "sourceLocale": "fr",
                 "locales": {
-                    "en-US": {
+                    "en": {
                         "baseHref": "en/",
                         "translation": "src/locale/messages.en.xlf"
                     }
@@ -29,6 +29,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+                        "localize": true,
                         "outputPath": "dist/ssr/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
@@ -73,6 +74,12 @@
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
+                        },
+                        "fr": {
+                            "localize": ["fr"]
+                        },
+                        "en": {
+                            "localize": ["en"]
                         }
                     },
                     "defaultConfiguration": "production"
@@ -85,6 +92,12 @@
                         },
                         "development": {
                             "browserTarget": "ssr:build:development"
+                        },
+                        "fr": {
+                            "browserTarget": "ssr:build:development,fr"
+                        },
+                        "en": {
+                            "browserTarget": "ssr:build:development,en"
                         }
                     },
                     "defaultConfiguration": "development"
