@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "i18n": "ng extract-i18n --output-path src/locale --out-file messages.fr.xlf",
     "dev:ssr": "ng run ssr:serve-ssr",
     "serve:ssr": "node dist/ssr/server/main.js",
     "build:ssr": "ng build && ng run ssr:server",
