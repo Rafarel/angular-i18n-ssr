@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 @Component({
     selector: 'app-home',
     template: `
-        <p>Bienvenue sur notre site</p>
-        <p>Dernière mise à jour effectuée il y a {{lastUpdateDays}} jours</p>
+        <p i18n>Bienvenue sur notre site</p>
+        <p i18n>Dernière mise à jour effectuée il y a {{lastUpdateDays}} jours</p>
     `,
     styles: []
 })
