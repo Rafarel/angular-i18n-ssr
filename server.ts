@@ -50,9 +50,9 @@ function run(): void {
     const appFr = app('fr');
     const appEn = app('en');
     const server = express();
-    server.use('' , appFr);
     server.use('/fr', appFr);
     server.use('/en', appEn);
+    server.use('' , appFr);
     server.listen(port, () => {
         console.log(`Node Express server listening on http://localhost:${port}`);
     });
