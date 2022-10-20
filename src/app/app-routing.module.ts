@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, ROUTES, Routes} from '@angular/router';
+import {Route, RouterModule, ROUTES, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {I18nService} from "./services/i18n.service";
+import {FrenchOnlyComponent} from "./components/french-only/french-only.component";
 
 interface LocalizedRouteData {
     path: string,
@@ -27,17 +28,32 @@ export const routesI18n: Routes = [
                 en: {path: 'contact-us', title: 'Contact us'},
             }
         }
+    },
+    // This route does not exist in english
+    {
+        component: FrenchOnlyComponent,
+        data: {
+            locales: {
+                fr: {path: 'francais-seulement', title: 'Page Française'}
+            }
+        }
     }
 ];
 
 export function routesFactory()
 {
+    const getLocalizedRouteData = (route: Route, locale: string): LocalizedRouteData | undefined =>
+    {
+        if (route.data && route.data['locales'] && route.data['locales'][locale])
+            return route.data['locales'][locale]
+
+        return undefined
+    }
+
     return (i18nService: I18nService): Routes => {
-        return routesI18n.map(route => {
-            const localized = route.data!['locales'][i18nService.locale] as LocalizedRouteData;
-            route = {...route, ...localized}
-            return route;
-        });
+        return routesI18n
+            .filter(route => getLocalizedRouteData(route, i18nService.locale))
+            .map(route => { return {...route, ...getLocalizedRouteData(route, i18nService.locale)} });
     }
 }
 
