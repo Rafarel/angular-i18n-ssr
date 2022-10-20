@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {Route, RouterModule, ROUTES, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {ContactComponent} from "./components/contact/contact.component";
@@ -50,10 +50,11 @@ export function routesFactory()
         return undefined
     }
 
-    return (i18nService: I18nService): Routes => {
+    return (locale: string): Routes => {
+        console.log("routesFactory", locale)
         return routesI18n
-            .filter(route => getLocalizedRouteData(route, i18nService.locale))
-            .map(route => { return {...route, ...getLocalizedRouteData(route, i18nService.locale)} });
+            .filter(route => getLocalizedRouteData(route, locale))
+            .map(route => { return {...route, ...getLocalizedRouteData(route, locale)} });
     }
 }
 
@@ -66,7 +67,7 @@ export function routesFactory()
         {
             provide: ROUTES,
             useFactory: routesFactory(),
-            deps: [I18nService],
+            deps: [LOCALE_ID],
             multi: true
         }
     ]
