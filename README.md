@@ -1,35 +1,31 @@
-# Ssr
+# ssr-i18n
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+## Routing i18n
 
-## Rafarel's note
+Routes are computed by a factory to be able to have different route per locale.
+
+## Pre-rendering 
+
+With a custom i18n routing in place, the base pre-rendering process is not functional anymore because `prerender` will render each route once with the default locale because routes are supposed to be the same no matter the locale (except baseHref like /fr/ or /en/). So you'll have by default the following routes rendered `/fr/contactez-nous` and `/en/contactez-nous` instead of `/fr/contactez-nous` and `/en/contact-us`. 
+
+Pre-rendering have to be done for each language to keep separate i18n routes.
+To achieve this, we have to disable the `guessRoutes` option and declare manually routes to be pre-rendered for each locale.
+We also have to prevent the build process to delete output for previous pre-renderer locale by setting the `deleteOutputPath` to `false`.
+
+Best workflow I found is :
+- Delete the dist folder to start fresh.
+- Pre-render the `fr` locale.
+- Pre-render the `en` locale without deleting the output path.
+- Copy the proxy-server.js in the `dist/ssr` folder.
+
+## Serving SSR i18n app
+
+To serve the app, we have to use the proxy-server.js file to serve the app for each locale.
+
+
+## Notes
 
 Generate a new component
 ```
 ng g c components/<component-name> -m app.module
 ```
-
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
