@@ -2,6 +2,22 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="fr" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="7661186678708421252" datatype="html">
+        <source>Contactez nous en utilisant ce formulaire</source>
+        <target>Contact us using this form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7595145097847250773" datatype="html">
+        <source>La locale courante est : <x id="INTERPOLATION" equiv-text="{{locale}}"/></source>
+        <target>The current locale is : <x id="INTERPOLATION" equiv-text="{{locale}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9058814379900574105" datatype="html">
         <source>Bienvenue sur notre super site</source>
         <target>Welcome to our super site</target>
@@ -23,7 +39,7 @@
          <target>texts translated by angular</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">desc</note>
         <note priority="1" from="meaning">meaning</note>

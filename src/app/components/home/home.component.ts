@@ -3,7 +3,7 @@ import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 @Component({
     selector: 'app-home',
     template: `
-        <p>tada {{locale}}</p>
+        <p i18n>La locale courante est : {{locale}}</p>
         <p i18n>Bienvenue sur notre super site</p>
         <p i18n>Dernière mise à jour effectuée il y a {{lastUpdateDays}} jours</p>
         <p>{{text}}</p>
