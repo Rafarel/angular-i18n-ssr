@@ -13,7 +13,9 @@
     "dev:ssr": "ng run ssr:serve-ssr",
     "serve:ssr": "node dist/ssr/proxy-server.js",
     "build:ssr": "ng build && ng run ssr:server && copyfiles proxy-server.js dist/ssr",
-    "prerender": "ng run ssr:prerender"
+    "prerender": "ng run ssr:prerender",
+    "prerender:fr": "ng run ssr:prerender:fr",
+    "prerender:en": "ng run ssr:prerender:en"
   },
   "private": true,
   "dependencies": {
