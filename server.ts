@@ -38,7 +38,10 @@ export function app(lang: string): express.Express
 
     // All regular routes use the Universal engine
     server.get('*', (req, res) => {
-        res.render(indexHtml, {req, providers: [{provide: APP_BASE_HREF, useValue: req.baseUrl}]});
+        res.render(indexHtml, {req, providers: [
+            {provide: APP_BASE_HREF, useValue: req.baseUrl},
+            {provide: LOCALE_ID, useValue: lang}
+        ]});
     });
 
     return server;
